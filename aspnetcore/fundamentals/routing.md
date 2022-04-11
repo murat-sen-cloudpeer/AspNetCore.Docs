@@ -804,6 +804,15 @@ In the preceding code, the `culture` route parameter is used for localization. T
 * In the `"default"` route template, the `culture` route parameter is to the left of `controller`, so changes to `controller` won't invalidate `culture`.
 * In the `"blog"` route template, the `culture` route parameter is considered to be to the right of `controller`, which appears in the required values.
 
+## Parse paths with `LinkParser`
+
+<xref:Microsoft.AspNetCore.Routing.LinkParser>
+<xref:Microsoft.AspNetCore.Routing.LinkParserEndpointNameAddressExtensions.ParsePathByEndpointName%2A>
+
+:::code language="csharp" source="routing/samples/6.x/RoutingSample/Snippets/Controllers/ProductsController.cs" id="snippet_ClassGet" highlight="2-4":::
+
+:::code language="csharp" source="routing/samples/6.x/RoutingSample/Snippets/Controllers/ProductsController.cs" id="snippet_AddRelatedProduct":::
+
 ## Configure endpoint metadata
 
 The following links provide information on how to configure endpoint metadata:
@@ -835,7 +844,7 @@ The following code uses `RequireHost` to require the specified host on the route
 
 The following code uses the `[Host]` attribute on the controller to require any of the specified hosts:
 
-:::code language="csharp" source="routing/samples/6.x/RoutingSample/Snippets/Controllers/ProductsController.cs" id="snippet_Host":::
+:::code language="csharp" source="routing/samples/6.x/RoutingSample/Snippets/Controllers/HostsController.cs" id="snippet_Class":::
 
 When the `[Host]` attribute is applied to both the controller and action method:
 

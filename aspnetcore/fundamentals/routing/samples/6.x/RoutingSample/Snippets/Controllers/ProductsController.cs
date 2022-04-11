@@ -1,16 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RoutingSample.Snippets.Controllers;
-    
-// <snippet_Host>
-[Host("contoso.com", "adventure-works.com")]
-public class ProductsController : Controller
-{
-    public IActionResult Index() =>
-        View();
 
-    [Host("example.com")]
-    public IActionResult Example() =>
-        View();
+// <snippet_ClassGet>
+[ApiController]
+[Route("/api/Products")]
+public class ProductsController : ControllerBase
+{
+    [HttpGet("{id}", Name = nameof(GetProduct))]
+    public IActionResult GetProduct(string id)
+        // </snippet_ClassGet>
+        => Ok();
+
+    [HttpPost("{id}/Related")]
+    // <snippet_AddRelatedProduct>
+    public IActionResult AddRelatedProduct(
+        string id, string pathToRelatedProduct, [FromServices] LinkParser linkParser)
+    {
+        var routeValues = linkParser.ParsePathByEndpointName(
+            nameof(GetProduct), pathToRelatedProduct);
+        var relatedProductId = routeValues?["id"];
+
+        // ...
+        // </snippet_AddRelatedProduct>
+
+        return NoContent();
+    }
 }
-// </snippet_Host>
