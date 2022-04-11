@@ -12,8 +12,8 @@ public class ProductsController : ControllerBase
         // </snippet_ClassGet>
         => Ok();
 
-    [HttpPost("{id}/Related")]
     // <snippet_AddRelatedProduct>
+    [HttpPost("{id}/Related")]
     public IActionResult AddRelatedProduct(
         string id, string pathToRelatedProduct, [FromServices] LinkParser linkParser)
     {

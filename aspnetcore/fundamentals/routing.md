@@ -809,7 +809,7 @@ In the preceding code, the `culture` route parameter is used for localization. T
 <xref:Microsoft.AspNetCore.Routing.LinkParser>
 <xref:Microsoft.AspNetCore.Routing.LinkParserEndpointNameAddressExtensions.ParsePathByEndpointName%2A>
 
-:::code language="csharp" source="routing/samples/6.x/RoutingSample/Snippets/Controllers/ProductsController.cs" id="snippet_ClassGet" highlight="2-4":::
+:::code language="csharp" source="routing/samples/6.x/RoutingSample/Snippets/Controllers/ProductsController.cs" id="snippet_ClassGet" highlight="2,4":::
 
 :::code language="csharp" source="routing/samples/6.x/RoutingSample/Snippets/Controllers/ProductsController.cs" id="snippet_AddRelatedProduct":::
 
